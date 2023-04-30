@@ -14,7 +14,13 @@
 @if (cobrancasRealizadas == true)
 {
     <br><br>
-    <p>Cobranças realizadas</p>}
+    <p>Cobranças realizadas</p>
+}
+else
+{
+ <br><br>
+ <p>A tarifa já cobrada esse mês.</p>
+}
 
 
 @code {
@@ -28,14 +34,16 @@
                 if (item.Tarifa.Month < 0)
                 {
                     item.cobrarTarifa(dados.DataDoSistema);
-                    continue;
                     cobrancasRealizadas = true;
+                    continue;
+                    
                 } 
                 if (item.Tarifa.Month < dados.DataDoSistema.Month)
                 {
                     item.cobrarTarifa(dados.DataDoSistema);
-                    continue;
                     cobrancasRealizadas = true;
+                    continue;
+                    
                 }
                 else
                 {
