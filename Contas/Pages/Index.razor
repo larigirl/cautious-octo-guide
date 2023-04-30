@@ -29,11 +29,17 @@
                 {
                     item.cobrarTarifa(dados.DataDoSistema);
                     continue;
+                    cobrancasRealizadas = true;
                 } 
                 if (item.Tarifa.Month < dados.DataDoSistema.Month)
                 {
                     item.cobrarTarifa(dados.DataDoSistema);
                     continue;
+                    cobrancasRealizadas = true;
+                }
+                else
+                {
+                    cobrancasRealizadas = false;
                 }
             }
         }
